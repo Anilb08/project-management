@@ -163,3 +163,51 @@ export const acceptInvitation = ({invitationToken,navigate}) => {
     }
   };
 };
+
+
+// // Action for accepting invitation
+// export const acceptInvitation = ({ invitationToken, navigate }) => {
+//   console.log("invitation token", invitationToken);
+  
+//   // Check if invitationToken is valid
+//   if (!invitationToken) {
+//     console.error("No invitation token provided");
+//     return dispatch => dispatch({
+//       type: actionTypes.ACCEPT_INVITATION_FAILURE,
+//       error: "No invitation token provided",
+//     });
+//   }
+
+//   return async dispatch => {
+//     dispatch({ type: actionTypes.ACCEPT_INVITATION_REQUEST });
+
+//     try {
+//       // Make GET request to accept invitation
+//       const { data } = await api.get('/api/projects/accept_invitation', {
+//         params: { token: invitationToken },
+//       });
+
+//       console.log("accept invitation response", data);
+      
+//       // Navigate to the project page upon success
+//       navigate(`/project/${data.projectId}`);
+
+//       dispatch({ type: actionTypes.ACCEPT_INVITATION_SUCCESS, payload: data });
+//     } catch (error) {
+//       // Log detailed error information
+//       console.error("Error details:", {
+//         message: error.message,
+//         response: error.response?.data,
+//         status: error.response?.status,
+//         config: error.config,
+//       });
+
+//       // Dispatch failure action with error details
+//       dispatch({
+//         type: actionTypes.ACCEPT_INVITATION_FAILURE,
+//         error: error.response?.data?.message || error.message,
+//       });
+//     }
+//   };
+// };
+
